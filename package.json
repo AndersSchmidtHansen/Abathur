@@ -14,6 +14,7 @@
     "gulp-watch"       : "latest",
     "gulp-changed"     : "latest",
     "gulp-zip"         : "latest",
+    "gulp-rimraf"      : "latest",
     "gulp-coffee"      : "latest",
     "gulp-concat"      : "latest",
     "gulp-ignore"      : "latest",

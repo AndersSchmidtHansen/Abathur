@@ -81,6 +81,12 @@ gulp.task 'pack', ->
   .pipe gulp.dest "distribution/#{args.element}"
   .pipe run.notify message : "#{args.element} is being packed and zipped..."
 
+# Remove elements from distribution (if needed)
+gulp.task 'trash', ->
+  gulp.src "distribution/#{args.element}"
+  .pipe run.rimraf()
+  .pipe run.notify message : "#{args.element} has been removed from distribution folder..."
+
 # Default
 gulp.task "default", [ "browser-sync", "watch" ]
 
