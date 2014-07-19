@@ -1,0 +1,28 @@
+$fur_color    : orange;
+$stripe_color : black;
+$tiger_size   : 50px;
+$fur_deg      : random(180) + deg;
+
+paper-tiger {
+  &:before {
+    content: "";
+    display: block;
+    width: $tiger_size;
+    height: $tiger_size;
+    border-radius: 4px;
+    border: 3px solid gainsboro;
+    background-color: $stripe_color;
+    background-size: $tiger_size $tiger_size;
+    background-position: 0px 2px, 4px 35px, 29px 31px, 33px 6px,
+    0px 36px, 4px 2px, 29px 6px, 33px 30px;
+    background-image:
+    linear-gradient($fur_deg, $fur_color 23px, transparent 23px),
+    linear-gradient($fur_deg, $fur_color 23px, transparent 23px),
+    linear-gradient($fur_deg, $fur_color 23px, transparent 23px),
+    linear-gradient($fur_deg, $fur_color 23px, transparent 23px),
+    linear-gradient($fur_deg, $fur_color 10px, transparent 10px),
+    linear-gradient($fur_deg, $fur_color 10px, transparent 10px),
+    linear-gradient($fur_deg, $fur_color 10px, transparent 10px),
+    linear-gradient($fur_deg, $fur_color 10px, transparent 10px);
+  }
+}

@@ -1,0 +1,18 @@
+/  "Paper Tiger" - an example Polymer element to show off Abathur.
+/  Displays a tiger cube with randomized stripes, says rawr and
+/  presents a list of cool tiger names.
+
+/ Setting a name variables makes the rest
+/ so much easier throughout the element
+- name = "paper-tiger"
+
+/ From here, it's just a matter of going
+/ crazy with Polymer ^__^
+polymer-element name="#{name}" noscript=""
+  link rel="stylesheet" href="#{name}.min.css"
+  template
+    p Rawr, the Paper Tiger element is working, here are some sweet tiger names for you as a present:
+    template repeat="{{ tiger in tigers }}"
+      | {{ tiger }} <br>
+
+  script src="#{name}.min.js"
