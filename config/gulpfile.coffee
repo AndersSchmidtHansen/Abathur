@@ -12,7 +12,9 @@ gulp        = require "gulp"
 run         = require("gulp-load-plugins")()
 browserSync = require "browser-sync"
 args        = require("yargs").argv
+fs          = require "fs"
 reload      = browserSync.reload
+element     = args.element is 'element'
 
 # Paths
 paths =
@@ -69,7 +71,6 @@ gulp.task 'synthesize', ->
   .pipe reload stream : true
 
 # Pack and .zip elements
-element = args.element is 'element'
 gulp.task 'pack', ->
 
   gulp.src "elements/#{args.element}/*"
@@ -86,6 +87,15 @@ gulp.task 'trash', ->
   gulp.src "distribution/#{args.element}"
   .pipe run.rimraf()
   .pipe run.notify message : "#{args.element} has been removed from distribution folder..."
+
+# Add boilerplate files to Factory
+gulp.task 'craft', ->
+  fs.mkdir "factory/#{args.element}"
+  fs.writeFile "factory/#{args.element}/#{args.element}.slim"
+  fs.writeFile "factory/#{args.element}/#{args.element}.scss"
+  fs.writeFile "factory/#{args.element}/#{args.element}.coffee"
+  console.log "#{args.element} folder and files has been created..."
+
 
 # Default
 gulp.task "default", [ "browser-sync", "watch" ]
