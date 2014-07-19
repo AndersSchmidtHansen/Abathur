@@ -13,7 +13,7 @@ In the following, I outline through an example how to get the most out of Abathu
 
 ### Summoning Abathur
 
-To install Abathur on your system, have Node / NPM installed beforehand along with Gulp along with the Ruby gem `sass` (`$ gem install sass`) and simply clone this repo to your system:
+To install Abathur on your system, have Node / NPM installed beforehand along with Gulp and the Ruby gem `sass` (`$ gem install sass`). Then simply clone this repo to your system:
 
 ```
 $ git clone git@github.com:AndersSchmidtHansen/Abathur.git Abathur
