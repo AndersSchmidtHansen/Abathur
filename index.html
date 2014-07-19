@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>Abathur by AndersSchmidtHansen</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <h1>Abathur</h1>
+        <h2>Framework for crafting Polymer elements using Gulp, Sass, Coffeescript, Slim &amp; BrowserSync</h2>
+        <a href="https://github.com/AndersSchmidtHansen/Abathur" class="button"><small>View project on</small>GitHub</a>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <h1>
+<a name="abathur" class="anchor" href="#abathur"><span class="octicon octicon-link"></span></a>Abathur</h1>
+
+<p>Framework for crafting Polymer elements using Gulp, Sass, Coffeescript, Slim &amp; BrowserSync.</p>
+
+<p>Build Polymer elements in the slickest way possible and have them zipped for distribution when you're done. And with BrowserSync you can even reload your element every time you make a change.</p>
+
+<h2>
+<a name="video-demo" class="anchor" href="#video-demo"><span class="octicon octicon-link"></span></a>Video Demo</h2>
+
+<p><a href="https://www.screenr.com/ngRN" target="_BLANK"><img src="http://i61.tinypic.com/2mh7q0w.png" alt=""></a></p>
+
+<h2>
+<a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h2>
+
+<p>In the following, I outline through an example how to get the most out of Abathur and what kind of workflow I usually follow.</p>
+
+<h3>
+<a name="summoning-abathur" class="anchor" href="#summoning-abathur"><span class="octicon octicon-link"></span></a>Summoning Abathur</h3>
+
+<p>To install Abathur on your system, have Node / NPM installed beforehand along with Gulp and the Ruby gem <code>sass</code> (<code>$ gem install sass</code>). Then simply clone this repo to your system:</p>
+
+<pre><code>$ git clone git@github.com:AndersSchmidtHansen/Abathur.git Abathur
+</code></pre>
+
+<p>After that, run <code>$ npm install --save-dev</code> to install the node modules.</p>
+
+<h3>
+<a name="adding-a-new-polymer-element" class="anchor" href="#adding-a-new-polymer-element"><span class="octicon octicon-link"></span></a>Adding a new Polymer element</h3>
+
+<p>Let's add a Polymer element called "paper-mario" to Abathur...</p>
+
+<ol>
+<li><p>Run <code>$ gulp craft --element paper-mario</code>. This creates the folder "paper-mario" within the "factory" folder along with the necessary files <code>paper-mario.slim</code>, <code>paper-mario.scss</code> and <code>paper-mario.coffee</code></p></li>
+<li><p>Start up Gulp with <code>$ gulp</code>. Your browser will open and BrowserSync should now be active as well, providing live reloading when you make any changes to the files within the "paper-mario" folder.</p></li>
+<li><p>Begin creating your "paper-mario" Polymer element, starting with "paper-mario.slim". For inspiration, refer to the included "paper-tiger" example Polymer element or go to <a href="http://polymer-project.org">Polymer</a> for more.</p></li>
+</ol><p>When you save for the first time, the compiled version of "paper-mario" will be created inside the "elements" folder.</p>
+
+<ol>
+<li><p>Import the "paper-mario" to the "index.slim" file, by following the included "paper-tiger" example. You can remove the "paper-tiger" import if you want afterwards.</p></li>
+<li><p>When satisfied with your element and when you've tested it across multiple browsers, devices and screen sizes (which <a href="www.browsersync.io">BrowserSync</a> allows) it's time to pack it. Open a new tab in your terminal and type:</p></li>
+</ol><p><code>$ gulp pack --element paper-mario</code></p>
+
+<p>This will zip both the compiled and source versions of "paper-mario" into the "distribution" folder as <code>paper-mario__dist.zip</code> and <code>paper-mario__source.zip</code>.</p>
+
+<ol>
+<li>
+<strong>Optional</strong>: If you want to remove the zipped files you can also run <code>$ gulp trash --element paper-mario</code> (or of course, just delete it manually).</li>
+</ol><h3>
+<a name="available-gulp-commands" class="anchor" href="#available-gulp-commands"><span class="octicon octicon-link"></span></a>Available Gulp commands</h3>
+
+<p>Quick-create a new Polymer element:</p>
+
+<pre><code>$ gulp craft --element your-element-name
+</code></pre>
+
+<p>Compile all Polymer elements:</p>
+
+<pre><code>$ gulp synthesize
+</code></pre>
+
+<p>Pack an existing Polymer element as a .zip-file:</p>
+
+<pre><code>$ gulp pack --element your-element-name
+</code></pre>
+
+<p>Remove an existing Polymer element from "distribution" folder:</p>
+
+<pre><code>$ gulp trash --element your-element-name
+</code></pre>
+        </section>
+
+        <aside id="sidebar">
+          <a href="https://github.com/AndersSchmidtHansen/Abathur/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/AndersSchmidtHansen/Abathur/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
+
+          <p class="repo-owner"><a href="https://github.com/AndersSchmidtHansen/Abathur"></a> is maintained by <a href="https://github.com/AndersSchmidtHansen">AndersSchmidtHansen</a>.</p>
+
+          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
+    </div>
+
+  
+  </body>
+</html>
