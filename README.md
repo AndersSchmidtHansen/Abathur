@@ -5,6 +5,10 @@ Framework for crafting Polymer elements using Gulp, Sass, Coffeescript, Slim &am
 
 Build Polymer elements in the slickest way possible and have them zipped for distribution when you're done. And with BrowserSync you can even reload your element every time you make a change.
 
+Video "Stumblethrough"
+-----------------------------
+<a href="https://www.screenr.com/FMRN" target=_BLANK>![](http://i61.tinypic.com/2mh7q0w.png)</a>
+
 
 Usage
 ---------
