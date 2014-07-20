@@ -1,5 +1,6 @@
 Abathur
 =======
+** Current version: Experimental Alpha **
 
 Framework for crafting Polymer elements using Gulp, Sass, Coffeescript, Slim &amp; BrowserSync.
 
