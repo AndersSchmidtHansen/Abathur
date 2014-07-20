@@ -1,12 +1,10 @@
 / Setting a name variables makes the rest
 / so much easier throughout the element
-- name = "paper-tiger"
+- name = "base-element"
 
 polymer-element name="#{name}" noscript=""
   link rel="stylesheet" href="#{name}.min.css"
   template
-    p Rawr, the Paper Tiger element is working, here are some sweet tiger names for you as a present:
-    template repeat="{{ tiger in tigers }}"
-      | {{ tiger }} <br>
+    / Your Polymer element content here...
 
   script src="#{name}.min.js"

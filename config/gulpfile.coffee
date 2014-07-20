@@ -89,11 +89,19 @@ gulp.task 'trash', ->
   .pipe run.notify message : "#{args.element} has been removed from distribution folder..."
 
 # Add boilerplate files to Factory
+polymerBase = "config/base-element/base-element"
 gulp.task 'craft', ->
   fs.mkdir "factory/#{args.element}"
-  fs.writeFile "factory/#{args.element}/#{args.element}.slim"
-  fs.writeFile "factory/#{args.element}/#{args.element}.scss"
-  fs.writeFile "factory/#{args.element}/#{args.element}.coffee"
+  #fs.writeFile "factory/#{args.element}/#{args.element}.slim"
+  fs.createReadStream("#{polymerBase}.slim")
+  .pipe(fs.createWriteStream("factory/#{args.element}/#{args.element}.slim"))
+
+  fs.createReadStream("#{polymerBase}.scss")
+  .pipe(fs.createWriteStream("factory/#{args.element}/#{args.element}.scss"))
+
+  fs.createReadStream("#{polymerBase}.coffee")
+  .pipe(fs.createWriteStream("factory/#{args.element}/#{args.element}.coffee"))
+
   console.log "#{args.element} folder and files has been created..."
 
 
